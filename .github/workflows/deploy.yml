@@ -1,7 +1,7 @@
 name: Deploy project
 on: [push, workflow_dispatch]
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: checkout project
@@ -11,10 +11,10 @@ jobs:
         with:
           node-version: 18
       - name: installs dependencies
-        uses: npm install
+        run: npm install
       - name: lint code
-        uses: npm run lint
+        run: npm run lint
       - name: test code
-        uses: npm run test
+        run: npm run test
       - name: builds deploy
-        uses: npm run deploy
+        run: npm run deploy
