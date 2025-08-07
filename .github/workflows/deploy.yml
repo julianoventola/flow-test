@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 18
       - name: installs dependencies
-        uses: npm ci
+        uses: npm install
       - name: lint code
         uses: npm run lint
       - name: test code
